@@ -1,0 +1,28 @@
+<template>
+    <template lwc:if={hideDrivers}>
+       <lightning-card>
+          <ul>
+             <template for:each={drivers} for:item="driver">
+                <li class="slds-item" key={driver.Id}>
+                   <div class="cardTitle slds-p-bottom_small">
+                      <div onclick={handleClick} data-id={driver.Id}>{driver.Name}</div>
+                   </div>
+                </li>
+             </template>
+          </ul>
+       </lightning-card>
+    </template>
+    <template lwc:else>
+    <lightning-card>
+        <template lwc:if={displayInformation}>
+           <template lwc:if={selectedDriver}>
+              <p>{selectedDriver.Name}</p>
+              <p>Team: {selectedDriver.Team}</p>
+              <template lwc:if={selectedDriver.IsRaceWinner}>
+                 <p>Race Wins: {selectedDriver.RaceWins}</p>
+              </template>
+           </template>
+        </template>
+     </lightning-card>
+     </template>
+ </template>
