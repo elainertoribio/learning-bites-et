@@ -1,6 +1,6 @@
 import { LightningElement,track } from 'lwc';
 
-export default class Exercise1 extends LightningElement {
+export default class LwcBasics extends LightningElement {
 
     displayInformation = false;
     hideDrivers = true;
